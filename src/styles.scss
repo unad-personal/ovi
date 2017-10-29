@@ -8,22 +8,25 @@
 
 * {
 	margin:0;
-	padding:0;
+    padding:0;
+    font-size: $tamano-letra;
 }
  
 body {
-	background: $color-fondo;
+	background-color: $color-fondo;
 }
  
 header {
     width:100%;
-    background: $color-exteriores;
+    background-color: $color-exteriores;
+    margin-top: -20px;
 
     nav {
         width:90%;
         max-width:1000px;
         margin:20px auto;
-        
+        background-color: $color-exteriores;
+
         ul {
             overflow:hidden;
             list-style:none;
@@ -56,24 +59,37 @@ header {
 section {
 	padding:20px;
 }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $color-exteriores-contraste;
+    color: white;
+    text-align: center;
+}
  
 @media screen and (max-width:800px ) {
-	header nav {
-		width:80%;
-		height:100%;
-		left:-100%;
-		margin:0;
-        position: fixed;
-        
-        ul{
-            li {
-                display:block;
-                float:none;
-                border-bottom:1px solid rgba(255,255,255, .3);
+	header{ 
+        margin-top: 0px;
+        nav {
+            width:80%;
+            height:100%;
+            left:-100%;
+            margin:0;
+            position: fixed;
+            background-color:$color-exteriores;
+
+            ul{
+                li {
+                    display:block;
+                    float:none;
+                    border-bottom:1px solid rgba(255,255,255, .3);
+                }
             }
         }
-	}
- 
+    } 
 
 	.menu_bar {
 		display:block;
@@ -83,7 +99,7 @@ section {
         .bt-menu {
             display:block;
             padding:20px;
-            background:$color-exteriores;
+            background-color:$color-exteriores;
             color:#fff;
             text-decoration:none;
             font-weight: bold;
