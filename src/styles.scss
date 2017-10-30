@@ -71,15 +71,19 @@ section {
     vertical-align: top;
 
     .izquierda{
-        width: 40%;
+        width: 30%;
         padding: 20px;
         margin-right: 20px;
     }
 
-    .derecha{
-        margin-left: 50px; 
-        width: 61%;
-    }
+   
+}
+
+.derecha{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 60px; 
+    width: 50%;
 }
 
 footer {
@@ -141,5 +145,11 @@ footer {
    .izquierda{
       display: none !important;
    }
+
+   .derecha{
+        vertical-align: top;
+        margin-left: 20px; 
+        width: 90%;
+    }
    
 }
