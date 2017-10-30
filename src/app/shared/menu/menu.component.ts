@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 declare var jQuery: any;
 declare var $: any;
@@ -9,10 +12,16 @@ declare var $: any;
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  
   contador = 1;
-  constructor() { }
-
+  items: Observable<any[]>;
+  
+  constructor(afDB: AngularFireDatabase) { 
+    this.items = afDB.list('menus', ref => ref.orderByChild('orden')).valueChanges();
+  }
+  
   ngOnInit() {
+    $($("nav li")[0]).css("background-color","#333333");
     $("nav li").click(function(e){
         $("nav li").css("background-color","#005883");  
         $(this).css("background-color","#333333"); 

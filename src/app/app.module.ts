@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomeModule } from './home/home.module';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,13 @@ import { FooterComponent } from './shared/footer/footer.component';
   imports: [
     BrowserModule,
     HomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule 
   ],
-  providers: [],
+  providers: [
+    AngularFireDatabase
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

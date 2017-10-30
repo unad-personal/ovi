@@ -13,13 +13,13 @@
 }
  
 body {
-	background-color: $color-fondo;
+    background-color: $color-fondo;
 }
  
 header {
     width:100%;
     background-color: $color-exteriores;
-    margin-top: -20px;
+    @include sombreado();
 
     nav {
         width:90%;
@@ -61,6 +61,16 @@ section {
     margin-bottom: 100px;
 }
 
+.contenedor-full{
+    width: 95%;
+}
+
+.contenedor-mitad{
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
 footer {
     position: fixed;
     left: 0;
@@ -69,6 +79,7 @@ footer {
     background-color: $color-exteriores-contraste;
     color: white;
     text-align: center;
+    @include sombreado();
 }
  
 @media screen and (max-width:800px ) {
