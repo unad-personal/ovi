@@ -7,6 +7,11 @@
     <ul>
       <li *ngFor="let item of items | async">
         <a [routerLink]="[item.ruta]">{{item.nombre}}</a>
+          <ul>
+            <li *ngFor="let subitem of item.submenus">
+              {{subitem?.nombre}}
+            </li>
+          </ul>
       </li>
     </ul>
   </nav>
