@@ -66,9 +66,20 @@ section {
 }
 
 .contenedor-mitad{
-    width: 48%;
+    
     display: inline-block;
     vertical-align: top;
+
+    .izquierda{
+        width: 40%;
+        padding: 20px;
+        margin-right: 20px;
+    }
+
+    .derecha{
+        margin-left: 50px; 
+        width: 61%;
+    }
 }
 
 footer {

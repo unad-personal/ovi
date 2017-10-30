@@ -18,10 +18,14 @@ export class MenuComponent implements OnInit {
   
   constructor(afDB: AngularFireDatabase) { 
     this.items = afDB.list('menus', ref => ref.orderByChild('orden')).valueChanges();
+    
+    this.items.subscribe(res => {
+      console.log(res);
+      $($("nav li")[0]).css("background-color","#333333");
+    })
   }
   
   ngOnInit() {
-    $($("nav li")[0]).css("background-color","#333333");
     $("nav li").click(function(e){
         $("nav li").css("background-color","#005883");  
         $(this).css("background-color","#333333"); 

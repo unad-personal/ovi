@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() {
-
-  }
+  pagina: string;
+  Pagina: Observable<any>;
+  constructor(private route: ActivatedRoute, private afDB: AngularFireDatabase) {}
 
   ngOnInit() {
+    this.route.params
+      .subscribe(params => {
+        this.pagina = params['pagina'].toString();
+        this.ObtenerInfoPagina();
+      });
+    
+    this.cargarTwitter();
+  }
+
+    private ObtenerInfoPagina() {
+        var info = this.afDB.list('/contenidos', (ref => ref.orderByChild('menu').equalTo(this.pagina))).valueChanges();
+        this.Pagina = info;
+    }
+
+  private cargarTwitter() {
     !function (d, s, id) {
       var js: any,
         fjs = d.getElementsByTagName(s)[0],
@@ -25,5 +42,4 @@ export class HomeComponent implements OnInit {
     }
       (document, "script", "twitter-wjs");
   }
-
 }

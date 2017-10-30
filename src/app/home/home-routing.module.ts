@@ -7,11 +7,14 @@ import { ActividadesComponent } from './actividades/actividades.component';
 import { AutoresComponent } from './autores/autores.component';
 
 const routes: Routes = [  
-  { path: '', component: HomeComponent },
-  { path: 'lecturas', component: LecturasComponent },
+  { 
+    path: ':pagina', 
+    component: HomeComponent, 
+  }
+  /*{ path: 'lecturas', component: LecturasComponent },
   { path: 'multimedia', component: MultimediaComponent },
   { path: 'actividades', component: ActividadesComponent },
-  { path: 'autores', component: AutoresComponent }
+  { path: 'autores', component: AutoresComponent }*/
 ];
 /** array de componentes enrutables */
 export const routableComponents = [  
