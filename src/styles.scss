@@ -48,6 +48,41 @@ header {
                     margin-right:10px;
                 }
             }
+
+            ul{
+                display: none;
+                position: absolute;
+                top: 49px;
+                background: #333;
+                color: #fff;
+                padding: 5px 0px 5px 5px;
+                margin: 0;
+
+                li{
+                    float: left;
+                    color: #fff;
+                    width:100%;
+                    margin:2% 0%;
+
+                    a{
+                        color: #fff;
+                    }
+                    a:hover{
+                        color: #aaa073;
+                        cursor:pointer;
+                    }
+                }
+            }
+        }
+
+        ul#menu li:hover ul ul,ul#menu li:hover ul ul ul,ul#menu li.iehover ul ul,ul#menu li.iehover ul ul ul {
+            display: none;
+            cursor:pointer;
+        }
+
+        ul#menu li:hover ul,ul#menu ul li:hover ul,ul#menu ul ul li:hover ul,ul#menu li.iehover ul,ul#menu ul li.iehover ul,ul#menu ul ul li.iehover ul {
+            display: block;
+            cursor:pointer;
         }
     }
 }
@@ -113,6 +148,12 @@ footer {
                     display:block;
                     float:none;
                     border-bottom:1px solid rgba(255,255,255, .3);
+                }
+
+                ul{
+                    display: block;
+                    position: initial;
+                    padding: 0px;
                 }
             }
         }

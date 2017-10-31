@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
     
     this.items.subscribe(res => {
       console.log(res);
-      $($("nav li")[0]).css("background-color","#333333");
+      //$($("nav li")[0]).css("background-color","#333333");
     })
   }
   

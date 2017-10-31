@@ -4,14 +4,14 @@
       <i class="fa fa-bars" aria-hidden="true"></i> Menu</a>
   </div>
   <nav>
-    <ul>
+    <ul id="menu">
       <li *ngFor="let item of items | async">
         <a [routerLink]="[item.ruta]">{{item.nombre}}</a>
-         <!-- <ul>
-            <li *ngFor="let subitem of item.submenus">
-              {{subitem?.nombre}}
+          <ul>
+            <li *ngFor="let subitem of item?.submenus">
+              <a *ngIf="subitem" [routerLink]="[subitem.ruta]">{{subitem?.nombre}}</a>
             </li>
-          </ul>-->
+          </ul>
       </li>
     </ul>
   </nav>
