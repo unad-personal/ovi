@@ -8,7 +8,7 @@
             <div *ngFor="let info of Pagina | async">
                 <h1 style="font-size: 25px;">{{info.titulo}}</h1>
                 <hr><br><br>
-                <div [innerHtml]="info.contenido"></div>
+                <div [innerHtml]="info.contenido | keepHtml"></div>
             </div>
             <div *ngIf="!Pagina">
                 <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>

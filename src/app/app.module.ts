@@ -10,6 +10,7 @@ import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
 import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
 import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
+import { EscapeHtmlPipe } from './shared/keep-html.pipe';
 
 @NgModule({
     declarations: [
