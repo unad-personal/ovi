@@ -1,9 +1,14 @@
 <div class="contenedor-mitad izquierda">
         <a class="twitter-timeline" data-lang="es" data-width="220" data-height="350" data-theme="dark" href="https://twitter.com/UniversidadUNAD?ref_src=twsrc%5Etfw">Tweets by UniversidadUNAD</a>
 </div>
+
 <div class="contenedor-mitad derecha">
     <div *ngFor="let info of Pagina | async">
         <h1>{{info.titulo}}</h1>
         <div [innerHtml]="info.contenido"></div>
+    </div>
+    <div *ngIf="!Pagina">
+        <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
     </div>
 </div>

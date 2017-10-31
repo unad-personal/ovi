@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/first';
 import { AngularFireDatabase } from 'angularfire2/database';
+declare var $ : any;
 
 @Component({
   selector: 'app-home',
@@ -11,9 +13,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class HomeComponent implements OnInit {
   pagina: string;
   Pagina: Observable<any>;
+  contenido: any;
+
   constructor(private route: ActivatedRoute, private afDB: AngularFireDatabase) {}
 
   ngOnInit() {
+
     this.route.params
       .subscribe(params => {
         this.pagina = params['pagina'].toString();
@@ -21,10 +26,13 @@ export class HomeComponent implements OnInit {
       });
     
     this.cargarTwitter();
+      $(function() { $('textarea').froalaEditor() });
   }
 
     private ObtenerInfoPagina() {
-        var info = this.afDB.list('/contenidos', (ref => ref.orderByChild('menu').equalTo(this.pagina))).valueChanges();
+        var info = this.afDB.list('/contenidos',
+            (ref => ref.orderByChild('menu').equalTo(this.pagina).limitToFirst(1))).valueChanges().first();
+
         this.Pagina = info;
     }
 
