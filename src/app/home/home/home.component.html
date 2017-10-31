@@ -3,12 +3,17 @@
 </div>
 
 <div class="contenedor-mitad derecha">
-    <div *ngFor="let info of Pagina | async">
-        <h1>{{info.titulo}}</h1>
-        <div [innerHtml]="info.contenido"></div>
-    </div>
-    <div *ngIf="!Pagina">
-        <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
-        <span class="sr-only">Loading...</span>
+    <div class="card">
+        <div class="container">
+            <div *ngFor="let info of Pagina | async">
+                <h1 style="font-size: 25px;">{{info.titulo}}</h1>
+                <hr><br><br>
+                <div [innerHtml]="info.contenido"></div>
+            </div>
+            <div *ngIf="!Pagina">
+                <i class="fa fa-cog fa-spin fa-5x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
     </div>
 </div>
