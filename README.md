@@ -2,8 +2,12 @@
 Enlace a GitHub pages
 https://unad-personal.github.io/ovi/lecturas
 
-El proyecto se realizó usando Angular
-![Estructura](docs/estructura.png)
+El proyecto se realizó usando Angular &nbsp;
+![Estructura](docs/estructura.png) &nbsp;
+
+El código del componente que renderiza la página se encuentra en app/home &nbsp;
+![Estructura](docs/home.png) &nbsp;
+
 
 ## Tutorial de creación del menu
 http://www.falconmasters.com/web-design/menu-de-navegacion-responsive/
