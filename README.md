@@ -12,6 +12,36 @@ El código del componente que renderiza la página se encuentra en app/home &nbs
 
 ![Estructura](docs/home.png) &nbsp;
 
+## Estilos
+Se pueden encontrar en el archivo _variables.scss y en styles.scss
+
+
+En el archivo de variables se agregaron los colores corporativos de la Universidad para usarlos en la Sitio
+
+
+``` 
+# variables
+$color-exteriores:  #005883;
+$amarillo:  #F0B429;
+$naranja:  #F47920;
+$gris-oscuro: #333333;
+$gris-intermedio: #B3B3B3;
+$gris-claro: #808080;
+$color-fondo: #FFFFFA;
+$color-exteriores-contraste: $gris-oscuro;
+$tamano-letra: 18px;
+```
+
+## Contenidos
+Se usó Firebase para poder agregar dinámicamente los contenidos y los menús
+
+
+![Estructura](docs/firebase.png) &nbsp;
+
+![Estructura](docs/contenidosFirebase.png) &nbsp;
+
+![Estructura](docs/variables_firebase.png) &nbsp;
+
 
 ## Tutorial de creación del menu
 http://www.falconmasters.com/web-design/menu-de-navegacion-responsive/
