@@ -2,10 +2,14 @@
 Enlace a GitHub pages
 https://unad-personal.github.io/ovi/lecturas
 
-El proyecto se realizó usando Angular &nbsp;
+### Estructura
+
 ![Estructura](docs/estructura.png) &nbsp;
 
+### Componente principal
 El código del componente que renderiza la página se encuentra en app/home &nbsp;
+
+
 ![Estructura](docs/home.png) &nbsp;
 
 
