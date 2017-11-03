@@ -1,8 +1,11 @@
 # Ovi
-
+Enlace a GitHub pages
 https://unad-personal.github.io/ovi/lecturas
 
-## Menu
+El proyecto se realizó usando Angular
+![Estructura](docs/estructura.png)
+
+## Tutorial de creación del menu
 http://www.falconmasters.com/web-design/menu-de-navegacion-responsive/
 
 ## Iniciar contenedor
